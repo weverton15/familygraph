@@ -1,0 +1,24 @@
+repositories {
+    jcenter()
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+dependencies {
+    implementation "com.google.guava:guava:18.0"
+    implementation "org.apache.commons:commons-lang3:3.3.2"
+    implementation "com.opencsv:opencsv:5.1"
+    implementation "org.slf4j:slf4j-simple:2.0.0-alpha2"
+    compileOnly "org.projectlombok:lombok:1.18.10"
+    annotationProcessor "org.projectlombok:lombok:1.18.10"
+    testImplementation "junit:junit:4.+"
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+}
+
+tasks.test {
+    testLogging {
+        events("PASSED", "FAILED", "SKIPPED", "STANDARD_ERROR", "STANDARD_OUT")
+    }
+}
